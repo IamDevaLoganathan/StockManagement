@@ -11,20 +11,25 @@ using System.ComponentModel;
 
 namespace StockManagement.Controllers
 {
-    [Route("api/[controller]")]
+
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
-    
+    [ApiVersion("1.0")]
+
+
     public class StockController : ControllerBase
     {
         // Dependancy Injection
         public readonly ApplicationDbContext dbContext;
         public readonly IStockRepository IStock;
         public readonly IMapper mapper;
-        public StockController(IMapper mapper, ApplicationDbContext dbContext, IStockRepository IStock)
+        private readonly ILogger<StockController> logger;
+        public StockController(IMapper mapper, ApplicationDbContext dbContext, IStockRepository IStock, ILogger<StockController> logger)
         {
             this.dbContext = dbContext;
             this.IStock = IStock;
             this.mapper = mapper;
+            this.logger = logger;
         }
 
 
@@ -35,6 +40,8 @@ namespace StockManagement.Controllers
         {
             // Retrive Data with the help of Repositoru //
             var stockDomain = await IStock.GetALl();
+
+            logger.LogInformation("Records Fetched Succesfully");
 
             // Mapping (Domain to DTO) // with the help of Automapper //
             var DTO = mapper.Map<List<StockDTO>>(stockDomain);

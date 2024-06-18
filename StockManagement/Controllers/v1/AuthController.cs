@@ -6,8 +6,10 @@ using StockManagement.Models.DTOModels.Auth;
 
 namespace StockManagement.Controllers
 {
-    [Route("api/[controller]")]
+
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
+    [ApiVersion("1.0")]
     public class AuthController : ControllerBase
     {
         private readonly UserManager<IdentityUser> userManager;
