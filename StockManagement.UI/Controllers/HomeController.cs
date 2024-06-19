@@ -1,8 +1,9 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using StockManagement.UI.Models;
 using System.Diagnostics;
 
-namespace StockManagement.UI.Controllers
+namespace WebApplication1.Controllers
 {
     public class HomeController : Controller
     {

@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockManagement.DataAccess"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockManagement.Models", "StockManagement.Models\StockManagement.Models.csproj", "{7E2F2E2E-5C4C-4C45-892C-1190CF78B294}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockManagement.UI", "StockManagement.UI\StockManagement.UI.csproj", "{E70C76BA-7DB1-44D2-875E-47AB8754DA5F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{7E2F2E2E-5C4C-4C45-892C-1190CF78B294}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E2F2E2E-5C4C-4C45-892C-1190CF78B294}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E2F2E2E-5C4C-4C45-892C-1190CF78B294}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E70C76BA-7DB1-44D2-875E-47AB8754DA5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E70C76BA-7DB1-44D2-875E-47AB8754DA5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E70C76BA-7DB1-44D2-875E-47AB8754DA5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E70C76BA-7DB1-44D2-875E-47AB8754DA5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

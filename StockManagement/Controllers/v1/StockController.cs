@@ -15,6 +15,7 @@ namespace StockManagement.Controllers
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     [ApiVersion("1.0")]
+    [Authorize(Roles = "Writer")]
 
 
     public class StockController : ControllerBase
@@ -35,7 +36,6 @@ namespace StockManagement.Controllers
 
         [HttpGet]
         [Route("RetriveAll")]
-        [Authorize(Roles = "Reader")]
         public async Task<IActionResult> RetriveAll() 
         {
             // Retrive Data with the help of Repositoru //
@@ -55,7 +55,7 @@ namespace StockManagement.Controllers
 
         [HttpGet]
         [Route("RetriveById")]
-        [Authorize(Roles = "Reader")]
+        
         public async Task<IActionResult> Retrive(Guid Id)
         {
             // Retrive Data with the help of Repositoru //
@@ -77,7 +77,6 @@ namespace StockManagement.Controllers
 
         [HttpPost]
         [Route("Create")]
-        [Authorize(Roles = "Writer")]
         public async Task<IActionResult> Create(AddStockRequest addStockRequest)
         {
             if (!ModelState.IsValid)
@@ -106,7 +105,6 @@ namespace StockManagement.Controllers
 
         [HttpDelete]
         [Route("Delete")]
-        [Authorize(Roles = "Writer")]
         public async Task<IActionResult> Delete(Guid Id)
         {
 
@@ -126,7 +124,6 @@ namespace StockManagement.Controllers
 
         [HttpPut]
         [Route("Update")]
-        [Authorize(Roles = "Writer")]
         public async Task<IActionResult> Edit(Guid Id, UpdateStockRequest updateStockRequest)
         {
             if (!ModelState.IsValid)
